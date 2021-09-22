@@ -10,7 +10,7 @@
 }
 
 body{
-    /*background: url(https://encolombia.com/wp-content/uploads/2020/11/Geografia-de-Estados-Unidos.jpg) no-repeat center center fixed; */
+    background: url(https://encolombia.com/wp-content/uploads/2020/11/Geografia-de-Estados-Unidos.jpg) no-repeat center center fixed; 
     background: blue;
     height: 500px;
     -webkit-background-size: cover;
@@ -30,7 +30,7 @@ body{
     height: 600px;
     border-radius: 5px;
     background: rgba(34, 193, 233, 0.39);
-    box-shadow: 1px 1px 50px rgb(5, 15, 124);
+    
    
   }
 
@@ -81,7 +81,7 @@ padding:5px 20px;
         margin-left: 50px;
         font-family: 'Open Sans Condensed', sans-serif;
         position: relative;
-        margin-top: 15px;
+        margin-top: 20px;
         text-shadow: 3px 3px 10px rgb(3, 89, 146);
     }
 .resultado{
