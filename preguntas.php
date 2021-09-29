@@ -31,7 +31,7 @@ if ($pregunta4 == "v")
     $puntos = $puntos + 1; 
 }
 
-if ($pregunta5 == "f") {
+if ($pregunta5 == "v") {
     $puntos = $puntos + 1; 
 }
 
@@ -45,6 +45,7 @@ if (($puntos == 0) || ($puntos == 1) || ($puntos == 2)) {
 $porcentaje = ($puntos / 5)  * 100;
 /*echo '<script language="javascript">alert("Probabilidad de visa: '.$porcentaje.' % "+"'.$mensaje.'");</script>';*/
 /*echo "Resultado prueba prediagnóstica: $porcentaje % de probabilidad. <br> $mensaje <br>"*/
+
 
 ?>
 <!DOCTYPE html>
@@ -64,11 +65,14 @@ $porcentaje = ($puntos / 5)  * 100;
 
     <form action="preguntas.php" class="fomrulario" method="POST">
     <div class="pregu">
-    <h4>Los resultados de su prediagnóstico son:. </h4>
+    <h4>Los resultados de su prediagnóstico son: </h4>
     <div class="resultado">
  <?php
  echo "$porcentaje % de probabilidad. <br> $mensaje <br>"
  ?>
+ <br><a href="generarpdf.php?porcentaje=<?php echo $porcentaje ?>
+              &mensaje=<?php echo $mensaje ?>"class ="boton"> Guardar resultados</a> <br>
+ 
  </div>
 </div>
 </div>
