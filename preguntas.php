@@ -71,7 +71,7 @@ $porcentaje = ($puntos / 5)  * 100;
  echo "$porcentaje % de probabilidad. <br> $mensaje <br>"
  ?>
  <br><a href="generarpdf.php?porcentaje=<?php echo $porcentaje ?>
-              &mensaje=<?php echo $mensaje ?>"class ="boton"> Guardar resultados</a> <br>
+              &mensaje=<?php echo $mensaje ?>"class ="boton2"> DESCARGAR PDF</a> <br>
  
  </div>
 </div>
