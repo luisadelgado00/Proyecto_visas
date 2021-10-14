@@ -1,0 +1,9 @@
+version: '4.1.1'
+services:
+  mysql:
+    build:
+      context: .
+      Dockerfile: Dockerfile
+    container_name: mariadb_svc
+    restart: always
+      
