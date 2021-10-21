@@ -1,0 +1,11 @@
+version: '4.1.1'
+services:
+  nginx:
+    image: nginx:stable-alpine
+     container_name: nginx
+     ports:
+      -8888:80
+    
+      volumes:
+        -./
+  
