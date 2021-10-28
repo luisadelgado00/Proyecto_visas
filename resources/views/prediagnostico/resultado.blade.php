@@ -23,10 +23,11 @@
     <div class="resultado">
 <?php
  echo "$porcentaje % de probabilidad. <br> $mensaje <br>"
+ 
  ?>
  </div>
     
-        
+ 
 
         <label  class="label" for="nombreU">Nombre: </label><br>
         <input type="text" name="nombreU"><br>
@@ -43,7 +44,9 @@
   </select></br>
         <label  class="label" for="probabilidad">probabilidad: </label><br>
         <input type="text" name="probabilidad" value="<?php echo $porcentaje." % de probabilidad."?>" readonly> <br>
-        <br><input type="submit" class ="boton" value="GUARDAR DATOS "><a href= "{{url ('login')}}" class="boton" >INICIO</a>
+        <br><input type="submit"  class ="boton" value="GUARDAR DATOS "><a href= "{{url ('login')}}" class="boton" >INICIO</a>
+        <a href= "{{url ('prediagnostico/pdf')}}" class="boton" >PDF</a>
+        
     
  </div>
 </div>

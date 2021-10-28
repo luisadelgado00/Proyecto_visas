@@ -1,0 +1,16 @@
+body{
+    overflow-x: hidden;
+    width: 100% !important;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background: rgb(187, 183, 252)url(https://www.mactualidad.com/wp-content/uploads/2013/08/new-york-fondos-pantalla-hd-25.jpg);
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    justify-content: center;
+}
+
+
+
+  

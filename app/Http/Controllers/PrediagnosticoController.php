@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Prediagnostico;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use PDF;
 class PrediagnosticoController extends Controller
 {
     /**
@@ -12,10 +13,18 @@ class PrediagnosticoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    
+
     public function index()
     {
         $datos['prediagnosticos']=Prediagnostico::paginate(5);
         return view('prediagnostico.preRegistro',$datos);
+    }
+    public function sql_prueba()
+    {
+        $datos = DB::table('prediagnosticos')->get();
+        return view('resultados',$datos);
     }
     public function preReg()
     {
@@ -46,11 +55,35 @@ class PrediagnosticoController extends Controller
        $datosUsuario = request()-> except('_token');
        Prediagnostico::insert($datosUsuario);
        
-      
-       return redirect('formulario')->with('alerta','Gracias por completar el formulario.');
+      /* $nombre = $request->input('nombreU')."<br>";
+       $apellido = $request->input('apellidoU')."<br>";
+       $correo = $request->input('correoU')."<br>";
+       $telefono = $request->input('telefonoU')."<br>";
+       $probabilidad = $request->input('probabilidad')."<br>";
+       $visa = $request->input('visa')."<br>";
+      echo $nombre;
+      echo $apellido;
+      echo $correo;
+      echo $telefono;
+      echo $probabilidad;
+      echo $visa;
+      return view('prediagnostico.pdf')->with([
+        'Nombre'=>$nombre,
+        'Apellido'=>$apellido
+                                    ]); 
+
+        $pdf = PDF ::loadview('prediagnostico');                     
+        return $pdf->download('resultados.pdf');
+        //return view('prediagnostico/pdf');*/
+    
+        return redirect('formulario')->with('alerta','Gracias por completar el formulario.');
         
         
+  
     }
+
+
+    
     public function formu(Request $request)
     {
         $mensaje = "";
@@ -92,8 +125,10 @@ class PrediagnosticoController extends Controller
           else{
               $pregunta5="";
           }  
-          
-             
+        /************** */    
+       
+
+  /************** */           
          if ($pregunta1 == "f") 
          {
               $puntos = $puntos + 1; 
@@ -140,16 +175,16 @@ class PrediagnosticoController extends Controller
          'pregunta3'=>'required',
          'pregunta4'=>'required',
          'pregunta5'=>'required'
+         
+          
 
      ]);
-    return view('prediagnostico/resultado')->with([
+   return view('prediagnostico.resultado')->with([
         'porcentaje'=>$porcentaje,
         'mensaje'=>$mensaje
-                                    ]);
-     
-     
-        
-        
+                                    ]); 
+  
+
     }
 
     /**
@@ -158,6 +193,23 @@ class PrediagnosticoController extends Controller
      * @param  \App\Models\Prediagnostico  $prediagnostico
      * @return \Illuminate\Http\Response
      */
+/*******/
+public function pdf(Request $request)
+{
+    
+    
+    $datos['prediagnosticos']=Prediagnostico::paginate(5);
+   // return view('prediagnostico.pdf', $datos);
+   
+    $pdf = PDF ::loadview('prediagnostico/pdf',$datos);                     
+    return $pdf->download('resultados.pdf');
+    
+    
+}
+
+
+
+/*******/
     public function show(Prediagnostico $prediagnostico)
     {
         //

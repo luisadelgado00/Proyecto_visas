@@ -204,6 +204,9 @@
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Registrarse</a>
                         @endif
+                        @if (Route::has('requisitosVista'))
+                        <a href="{{ route('requisitosVista')}}">Requisitos visa no inmigrante</a>
+                        @endif
                     @endauth
                 </div>
             @endif

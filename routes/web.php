@@ -19,9 +19,34 @@ Use App\Http\Controllers\UsuarioController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::get('prediagnostico/pdf',[PdfController::class,'pdf'])->name('prediagnostico.pdf');
+ 
+
 Route::view('/welcome','welcome' )->name('welcome');
+
 Route::view('/formulario','formulario' )->name('formulario');
+
+Route::view('/resultado','resultado' )->name('resultado');
+
+Route::view('/requisitosVista','requisitosVista' )->name('requisitosVista');
+
+Route::view('/header','header' )->name('header');
+
+Route::view('/dashboardUser','dashboardUser' )->name('dashboardUser');
+
 Route::post('/formulario',[PrediagnosticoController::class,'formu'])->name('formulario');
+
+Route::get('prediagnostico/pdf',[PrediagnosticoController::class,'pdf'])->name('prediagnostico.pdf');
+
+//Route :: get('prediagnostico/resultado',[PrediagnosticoController::class,'contact'])->name('prediagnostico.resultado');
+
+//Route::post('/contact_post', [PrediagnosticoController::class,'contact_post'])->name('prediagnostico.resultado');
+
+
+
+//
+//Route::view('/prediagnostico/pdf','prediagnostico/pdf' )->name('prediagnostico.pdf');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

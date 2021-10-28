@@ -61,15 +61,11 @@ background: rgba(255, 255, 255, 0.8);
             <table>
                 <tr>
             <!--CLICK EN IMAGENES QUE SON BOTONES CON ESCRITURA NORMAL-->   
-            <td><br><label class="label">REGISTRO DEL CLIENTE</label><br>
-            <br><a href= "{{url ('/prediagnostico')}}" class="boton" ><img  src="{!! asset('images/usuario.png') !!}" width="200px" height="150px"/></a><br></td>
+            <td><br><label class="label">Proceso</label><br>
+            <br><a href= "{{url ('resultados')}}" class="boton" ><img  src="{!! asset('images/usuario.png') !!}" width="200px" height="150px"/></a><br></td>
             </tr>
             <tr>
-            <td ><br><label class="label">VISUALIZACION REGISTRO DEL CLIENTE</label><br>
-            <a href= "{{url ('/usuario')}}" class="boton" ><img src="{!! asset('images/gafas.png') !!}" width="200px" height="120px"></a></br>
-           
-                  
-                       
+            
             
             
             </tr>

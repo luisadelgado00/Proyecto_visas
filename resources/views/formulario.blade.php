@@ -1,5 +1,4 @@
-
-
+@include('header')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,34 +23,35 @@ Hay campos vacios
     <div class="pregu">
     <h4>1. ¿Desea quedarse permanentemente en estados Unidos? </h4>
     <input class="form-check-input" type="radio" name="pregunta1" value="v">
-    <label class="label" for="pregunta1">Verdadero</label><br>
+    <label class="men" for="pregunta1">Verdadero</label><br>
     <input class="form-check-input" type="radio" name="pregunta1" value="f">
-    <label class="label" for="pregunta1">Falso</label>
+    <label class="men" for="pregunta1">Falso</label>
    
     <h4>2. ¿Tiene familia en el pais? </h4>
     <input class="form-check-input" type="radio" name="pregunta2" value="v" >
-    <label class="label" for="pregunta2">Si</label><br>
+    <label class="men" for="pregunta2">Si</label><br>
     <input class="form-check-input" type="radio" name="pregunta2" value="f">
-    <label class="label" for="pregunta2">No</label>
+    <label class="men" for="pregunta2">No</label>
 
     <h4>3. ¿Tiene sitio donde hospedarse al llegar? </h4>
     <input class="form-check-input" type="radio" name="pregunta3" value="v">
-    <label class="label" for="pregunta3">Si</label><br>
+    <label class="men" for="pregunta3">Si</label><br>
     <input class="form-check-input" type="radio" name="pregunta3" value="f">
-    <label class="label" for="pregunta3">No</label>
+    <label class="men" for="pregunta3">No</label>
 
     <h4>4. ¿Es la primera vez que solicita la visa? </h4>
     <input class="form-check-input" type="radio" name="pregunta4" value="v">
-    <label class="label" for="pregunta4">Si</label><br>
+    <label class="men" for="pregunta4">Si</label><br>
     <input class="form-check-input" type="radio" name="pregunta4" value="f">
-    <label class="label" for="pregunta4">No</label>
+    <label class="men" for="pregunta4">No</label>
 
     <h4>5. ¿Cuanto tiempo planea quedarse? </h4>
     <input class="form-check-input" type="radio" name="pregunta5" value="v">
-    <label class="label" for="pregunta5">Menos de 3 meses</label><br>
+    <label class="men" for="pregunta5">Menos de 3 meses</label><br>
     <input class="form-check-input" type="radio" name="pregunta5" value="f">
-    <label class="label" for="pregunta5">Mas de 3 meses</label>
-    <br><input type="submit" class ="boton" value="ENVIAR"> <a href= "{{url ('login')}}" class="boton" >INICIO</a>
+    <label class="men" for="pregunta5">Mas de 3 meses</label>
+    <br><input type="submit" class ="boton" value="ENVIAR"> <a href= "{{url ('login')}}" class="boton" >INICIO SESION</a>
+    <a href= "{{url ('welcome')}}" class="boton" >INICIO</a>
 
   
 
