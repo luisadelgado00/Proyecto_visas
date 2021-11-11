@@ -193,24 +193,52 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-        
+       
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/dashboard') }}">dashboard</a>
+                        <a href="{{ url('/dashboard') }}">{!! trans('messages.dash') !!}</a>
+                        @if (Route::has('requisitosVista'))
+                        <a href="{{ route('requisitosVista')}}">{!! trans('messages.requis') !!}</a>
+                        @endif
+                        <!--Comprobamos si el status esta a true y existe más de un lenguaje-->
+                        @if (config('locale.status') && count(config('locale.languages')) > 1)
+                <div class="top-right links">
+                    @foreach (array_keys(config('locale.languages')) as $lang)
+                        @if ($lang != App::getLocale())
+                            <a href="{!! route('lang.swap', $lang) !!}">
+                                    {!! $lang !!} <small>{!! $lang !!}</small>
+                            </a>
+                        @endif
+                    @endforeach
+                </div>
+            @endif
                     @else
-                        <a href="{{ route('login') }}">iniciar sesion</a>
+                    <!--Comprobamos si el status esta a true y existe más de un lenguaje-->
+ @if (config('locale.status') && count(config('locale.languages')) > 1)
+                <div class="top-right links">
+                    @foreach (array_keys(config('locale.languages')) as $lang)
+                        @if ($lang != App::getLocale())
+                            <a href="{!! route('lang.swap', $lang) !!}">
+                                    {!! $lang !!} <small>{!! $lang !!}</small>
+                            </a>
+                        @endif
+                    @endforeach
+                </div>
+            @endif
+                        <a href="{{ route('login') }}">{!! trans('messages.logIn') !!}</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Registrarse</a>
+                            <a href="{{ route('register') }}">{!! trans('messages.regis') !!}</a>
                         @endif
                         @if (Route::has('requisitosVista'))
-                        <a href="{{ route('requisitosVista')}}">Requisitos visa no inmigrante</a>
+                        <a href="{{ route('requisitosVista')}}">{!! trans('messages.requis') !!}</a>
                         @endif
+                        
                     @endauth
                 </div>
             @endif
-
+           
             <div class="pregu">
                 <div class=" m-b-md">
                     
@@ -221,18 +249,15 @@
                                             </div>    
                                             <div class="col-md-6 register-left">
                                                 
-                                                <h3>Bienvenidx</h3>
-                                                <p>En visas continental te ofrecemos un acompañamiento total <br> en tu trámite de visa americana,
-                                                    adicionalmente te ofrecemos <br> realizar un pre diagnóstico gratuito que te ayudará a <br> determinar 
-                                                    la probabilidad de aprobación que tienes en este momento.
+                                                <h3>{!! trans('messages.welcome') !!}</h3>
+                                                <p>{!! trans('messages.descriptionW') !!}
                                             </p>
                                                
                                             </div>    
                                         </div>
                         </div>
-
-                </div>
-
+ 
+ 
                 <div class="links">
                     
                 </div>

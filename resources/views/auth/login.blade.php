@@ -31,7 +31,7 @@ body {
 
         position:absolute;
         top: 50%;
-        margin-top: -250px;
+        margin-top: -230px;
         left: 50%;
         margin-left: -250px;
         width: 500px;
@@ -155,7 +155,7 @@ body {
     </style>
 </head>
 <body>
-<h2 class="titulo">BIENVENIDO A VISAS CONTINENTAL</h2>
+<h2 class="titulo"> {!! trans('messages.welcome') !!}</h2>
   <div class="wrap">
       
   <div class="pregu">
@@ -178,31 +178,33 @@ body {
             @csrf
 
             <div>
-                <x-jet-label class="label" for="email" value="{{ ('Correo') }}" />
+                <x-jet-label class="label" for="email" value="{!! trans('messages.email') !!}" />
                 <x-jet-input class="user" id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
             </div>
 
             <div class="mt-4">
-                <x-jet-label class="label" for="password" value="{{ ('Contraseña') }}" />
+                <x-jet-label class="label" for="password" value="{!! trans('messages.passW') !!}" />
                 <x-jet-input class="password" id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
             </div>
 
             <div class="block mt-4">
                 <label for="remember_me" >
                     <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ ('Recordar mis datos') }}</span>
+                    <span class="ml-2 text-sm text-gray-600">
+                    {!! trans('messages.recDatos') !!}
+                    </span>
                 </label>
             </div>
 
             <div >
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ ('¿Ha olvidado su contraseña?') }}
+                    {!! trans('messages.olvPass') !!}
                     </a>
                 @endif
 
                 <x-jet-button class="ml-4">
-                    {{ __('Iniciar sesión') }}
+                {!! trans('messages.logIn') !!}
                 </x-jet-button>
             </div>
         </form>
@@ -210,10 +212,10 @@ body {
 </x-guest-layout>
 
   
-     <h3 class="mensaje2" >Para obtener una cuenta debes realizar el prediagnóstico primero.</h3><br>
+     <h3 class="mensaje2" >{!! trans('messages.mensajeInicio') !!}</h3><br>
      
-     <a  href= "{{route ('formulario')}}" class="boton">PREDIAGNÓSTICO</a></br></br>
-     <a href= "{{url ('welcome')}}" class="boton" >INICIO</a>
+     <a  href= "{{route ('formulario')}}" class="boton">{!! trans('messages.prediagnostico') !!}</a></br></br>
+     <a href= "{{url ('welcome')}}" class="boton" >{!! trans('messages.inicio') !!}</a>
 </div> 
 </div> 
 </div>

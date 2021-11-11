@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Views;
 use App\Http\Controllers\PrediagnosticoController;
 Use App\Http\Controllers\UsuarioController;
+Use App\Http\Controllers\VisasController;
+Use App\Http\Controllers\LanguageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,13 +33,19 @@ Route::view('/resultado','resultado' )->name('resultado');
 
 Route::view('/requisitosVista','requisitosVista' )->name('requisitosVista');
 
+Route::view('/contacto','contacto' )->name('contacto');
+
 Route::view('/header','header' )->name('header');
 
-Route::view('/dashboardUser','dashboardUser' )->name('dashboardUser');
+Route::view('/tiposVisa','tiposVisa' )->name('tiposVisa');
 
 Route::post('/formulario',[PrediagnosticoController::class,'formu'])->name('formulario');
 
+Route::post('/tiposVisa',[VisasController::class,'visas'])->name('tiposVisa');
+
 Route::get('prediagnostico/pdf',[PrediagnosticoController::class,'pdf'])->name('prediagnostico.pdf');
+
+Route::view('/resultadoVisa','resultadoVisa' )->name('resultadoVisa');
 
 //Route :: get('prediagnostico/resultado',[PrediagnosticoController::class,'contact'])->name('prediagnostico.resultado');
 
@@ -63,3 +71,7 @@ Route::resource('prediagnostico','App\Http\Controllers\PrediagnosticoController'
 //Auth::routes();
 
 Route::resource('usuario', 'App\Http\Controllers\UsuarioController'::class);
+
+
+
+Route::get('lang/{lang}',[LanguageController::class,'swap'])->name('lang.swap');

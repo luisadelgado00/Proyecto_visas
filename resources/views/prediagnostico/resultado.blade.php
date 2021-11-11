@@ -26,28 +26,29 @@
  
  ?>
  </div>
-    
- 
+   <!--  
+ <div class="resultado2">
 
         <label  class="label" for="nombreU">Nombre: </label><br>
-        <input type="text" name="nombreU"><br>
-        <label  class="label" for="apellidoU">Apellido: </label><br>
-        <input type="text" name="apellidoU"><br>
+        <input type="text" class="nombre" name="nombreU"><br>
+        <label  class="label"  for="apellidoU">Apellido: </label><br>
+        <input type="text" class="apellido" name="apellidoU"><br>
         <label  class="label" for="telefonoU">Telefono: </label><br>
-        <input type="text" name="telefonoU"><br>
-        <label  class="label" class="level" for="correoU">Correo: </label><br>
-        <input type="email" class="level" name="correoU"><br>
-        <label  class="label" class="level" for="visa">Tipo de visa: </label><br>
-        <select name="visa">
+        <input type="text" class="telefono" name="telefonoU"><br>
+        <label  class="label" class="label" for="correoU">Correo: </label><br>
+        <input type="email" class="correo" name="correoU"><br>
+        <label  class="label"  for="visa">Tipo de visa: </label><br>
+        <select class="visas" name="visa">
     <option>Visa estudiantil</option>
     <option>Visa de turismo</option>
   </select></br>
         <label  class="label" for="probabilidad">probabilidad: </label><br>
-        <input type="text" name="probabilidad" value="<?php echo $porcentaje." % de probabilidad."?>" readonly> <br>
-        <br><input type="submit"  class ="boton" value="GUARDAR DATOS "><a href= "{{url ('login')}}" class="boton" >INICIO</a>
-        <a href= "{{url ('prediagnostico/pdf')}}" class="boton" >PDF</a>
+        <input type="text" name="probabilidad" class="prob" value="<?php echo $porcentaje." % de probabilidad."?>" readonly> <br>
+        <br><input type="submit"  class ="boton" value="GUARDAR DATOS ">
+           <a href= "{{url ('prediagnostico/pdf')}}" class="boton" >PDF</a> 
         
-    
+       </div>-->
+       <a href= "{{url ('login')}}" class="boton" >INICIO</a>
  </div>
 </div>
 </div>

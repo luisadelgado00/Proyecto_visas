@@ -18,7 +18,7 @@ class PrediagnosticoController extends Controller
 
     public function index()
     {
-        $datos['prediagnosticos']=Prediagnostico::paginate(5);
+        $datos['prediagnosticos']=Prediagnostico::paginate(100);
         return view('prediagnostico.preRegistro',$datos);
     }
     public function sql_prueba()
@@ -28,7 +28,7 @@ class PrediagnosticoController extends Controller
     }
     public function preReg()
     {
-        $datos['prediagnosticos']=Prediagnostico::paginate(5);
+        $datos['prediagnosticos']=Prediagnostico::paginate(100);
         return view('prediagnostico.preRegistro',$datos);
     }
 
@@ -207,7 +207,81 @@ public function pdf(Request $request)
     
 }
 
+public function visas(Request $request)
+    {
+        $mensaje = "";
+        $variable = 0;
+        $opcionVisa="";
+        
+        if (isset($_POST['opcionVisa'])) {
+            $opcionVisa=$_POST['opcionVisa'];
+         }
+         else{
+             $opcionVisa="";
+         }
+         
+        
+        /************** */    
+       
 
+  /************** */           
+         if ($opcionVisa == "turismoVisita") 
+         {
+              $variable = 1; 
+         }
+         
+         else if($opcionVisa == "empleo") 
+         {
+             $variable =  2; 
+         }
+         
+         else if ($opcionVisa == "estudio") 
+         {
+             $variable =  3; 
+         }
+         
+         if ($opcionVisa == "viajar") 
+         {
+             $variable = 4; 
+         }
+         
+      
+         
+          
+          
+         if ($variable == 1) {
+             $mensaje = "Visa tipo B"."Turismo y vacaciones"."Visitar a familiares y amigos.".
+             "Tratamiento médico".
+             "Tránsito por los EE.UU.";
+         }elseif ($variable == 2) {
+             $mensaje = "Visa tipo B o J"."Consultoría con socios comerciales
+             Viaje para una convención o conferencia
+             Negociar un contrato";
+         }elseif ($variable == 3) {
+             $mensaje = "Visa tipo F, M o J"."Ejemplos de este tipo de vis: Estudio académico en una institución académica aprobada, incluida la escuela secundaria (F)
+             Estudio vocacional en una institución educativa aprobada (M)
+             Estudio académico en una institución educativa aprobada, incluida la escuela secundaria, bajo un programa de intercambio aprobado (J)";
+         }
+        elseif ($variable == 4) {
+            $mensaje = "Visa tipo B o C"."Sus transferencias aéreas en los EE. UU., Como parte de un viaje posterior a otro país.";
+        }
+         /*echo '<script language="javascript">alert("Probabilidad de visa: '.$porcentaje.' % "+"'.$mensaje.'");</script>';*/
+         /*echo "Resultado prueba prediagnóstica: $porcentaje % de probabilidad. <br> $mensaje <br>"*/
+         
+
+
+       $datosUsuario = request()-> except('_token','pregunta1');
+     request()->validate([
+         'opcionVisa'=>'required',
+         
+     ]);
+     return view('tiposVisa ')->with([
+        'variable'=>$variable,
+        'mensaje'=>$mensaje
+                                    ]); 
+
+        
+}
 
 /*******/
     public function show(Prediagnostico $prediagnostico)
