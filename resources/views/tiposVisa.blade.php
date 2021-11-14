@@ -23,38 +23,49 @@
        
         <div id="sidebar" >
         <div class="sidebar-header">
-                <h3>Clasificación visas no inmigrante</h3>
+                <h3>{!! trans('messages.tipoV1') !!}</h3>
             </div>
         <div class="menu">
             <ul class="list-group">
-            
             <a href="#inicio" style ="text-decoration: none">
-            <button type="button"  class="btn-flotante" >
-            <i class="fas fa-angle-double-up"></i>
+            <button type="button"  class="btn-flotante" style="font-size: 16px; /* Cambiar el tamaño de la tipografia */
+	text-transform: uppercase; /* Texto en mayusculas */
+	font-weight: bold; /* Fuente en negrita o bold */
+	color: #ffffff; /* Color del texto */
+	border-radius: 5px; /* Borde del boton */
+	letter-spacing: 2px; /* Espacio entre letras */
+	background-color: #2eb8d6; /* Color de fondo */
+    border-color: #2eb8d6;
+	padding: 18px 30px; /* Relleno del boton */
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	transition: all 300ms ease 0ms;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	z-index: 99;">
+            <i class="fas fa-angle-double-up" ></i>
                         
                     </button> </a>
-           
-                
                 <li>
                 <a href="#ayudaVisa" style ="text-decoration: none">
-                    Identificador visas</a>
+                {!! trans('messages.tipoV2') !!}</a>
                 </li>
             <li>
                 <a href="#visaB" style ="text-decoration: none" >
-                (B) Visitante</a>
+                {!! trans('messages.tipoV3') !!}</a>
                 </li>
                 <li>
                 <a href="#visaC" style ="text-decoration: none">
-                (C) Tránsito en los EE. UU</a>
+                 {!! trans('messages.tipoV4') !!}</a>
                 </li>
                 <li>
                 <a href="#visaF" style ="text-decoration: none">
-                (F) Estudiante académico / (M) Estudiante no académico/técnico</a>
+                 {!! trans('messages.tipoV5') !!}</a>
                 </li>
                 <li> 
                 <li>
                 <a href="#visaJ"  style ="text-decoration: none"> 
-                (J) Visitante de intercambio</a>
+                  {!! trans('messages.tipoV6') !!}</a>
                 </li>
                
             </ul>
@@ -83,13 +94,13 @@
                         </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route ('contacto')}}" class="nav-link">UBICACIÓN</a>
+                                <a href="{{route ('contacto')}}" class="nav-link">{!! trans('messages.head1') !!}</a>
                             </li>
                             <li class="nav-item">
-                            <a href="{{route ('tiposVisa')}}" class="nav-link">TIPOS DE VISA</a>
+                            <a href="{{route ('tiposVisa')}}" class="nav-link">{!! trans('messages.head2') !!}</a>
                             </li>
                             <li class="nav-item ">
-                            <a href="{{route ('requisitosVista')}}" class="nav-link">REQUISITOS NO INMIGRANTE</a>
+                            <a href="{{route ('requisitosVista')}}" class="nav-link">{!! trans('messages.requis') !!}</a>
                             </li>
                         </ul>
                     </div>
@@ -107,28 +118,27 @@
                             @endif
                             <form method="POST" action="{{route('tiposVisa')}}" >
                                         @csrf
-                                        <h2 class="text-dark">Ayuda para identificar tipo de visa:</h2>
-                                        <p class="lead text-dark"> Si tiene alguna duda sobre que tipo de visa le conviene más, le ayudamos a identificarla por usted: <br>
-                                        Por favor seleccione su motivo de viaje: </p>
+                                        <h2 class="text-dark">{!! trans('messages.tipoV7') !!}</h2>
+                                        <p class="lead text-dark"> {!! trans('messages.tipoV8') !!}</p>
                                         <div class="row">
             
                                         <input  type="radio" name="opcionVisa" value="turismoVisita">
-                                        <label class="men" for="opcionVisa">Turismo o Visita</label><br>  
+                                        <label class="men" for="opcionVisa">{!! trans('messages.tipoV9') !!}</label><br>  
 
                                         <input  type="radio" name="opcionVisa" value="empleo">
-                                        <label class="men" for="opcionVisa">Negocios o Empleo</label><br>  
+                                        <label class="men" for="opcionVisa">{!! trans('messages.tipoV10') !!}</label><br>  
 
                                         <input  type="radio" name="opcionVisa" value="estudio">
-                                        <label class="men" for="opcionVisa">Estudio o Intercambio</label><br>  
+                                        <label class="men" for="opcionVisa">{!! trans('messages.tipoV11') !!}</label><br>  
 
                                         <input  type="radio" name="opcionVisa" value="viajar">
-                                        <label class="men" for="opcionVisa">Viajar a través de los Estados Unidos</label><br>  
+                                        <label class="men" for="opcionVisa">{!! trans('messages.tipoV12') !!}</label><br>  
                                         
                                        
                                        
                                     </br></br></br>
                                         
-                                    </br></br><input type="submit" class ="btn btn-primary btn-sm " value="ENVIAR"> 
+                                    </br></br><input type="submit" class ="btn btn-primary btn-sm " value="{!! trans('messages.form18') !!}"> 
                                     </div>
                                     <?php
                                        //echo $mensaje;
@@ -149,34 +159,15 @@
                         <div class="card-body">
                             <div class="row">
                           
-                                        <h2 class="text-dark">(B) Visitante:</h2>
-                                        <p class="lead text-dark text-justify"> Las visas de visitante son visas de no inmigrante para personas que desean ingresar a los Estados Unidos temporalmente por negocios (categoría de visa B-1), para turismo (categoría de visa B-2) o para una combinación de ambos propósitos (B-1 / B-2). </p>
-                                        <h3 class="text-dark text-justify">Negocios (B-1):</h3>
-                                        <p class="lead text-dark text-justify"> Consultar con socios comerciales 
-                                        <br> Asistir a una convención o conferencia científica, educativa, profesional o de negocios
-                                        <br> Liquidar un patrimonio
-                                        <br> Negociar un contrato </p>
-                                        <h3 class="text-dark text-justify">Turismo (B-2):</h3>
-                                        <p class="lead text-dark text-justify"> Turismo
-                                            <br>Vacaciones (vacaciones)
-                                            <br>Visita con amigos o familiares
-                                            <br>Tratamiento médico
-                                            <br>Participación en eventos sociales organizados por organizaciones fraternales,
-                                             sociales o de servicio
-                                             <br>Participación de aficionados en eventos o concursos musicales,
-                                             deportivos o similares, si no se les paga por participar
-                                             <br>Inscripción en un curso corto de estudio recreativo, 
-                                             no para obtener créditos para obtener un título 
-                                             (por ejemplo, una clase de cocina de dos días mientras está de vacaciones)</p>
+                                        <h2 class="text-dark">{!! trans('messages.tipoV3') !!}</h2>
+                                        <p class="lead text-dark text-justify">  {!! trans('messages.tipoV13') !!} </p>
+                                        <h3 class="text-dark text-justify"> {!! trans('messages.tipoV14') !!}</h3>
+                                        <p class="lead text-dark text-justify"> {!! trans('messages.tipoV15') !!}</p>
+                                        <h3 class="text-dark text-justify">{!! trans('messages.tipoV16') !!}</h3>
+                                        <p class="lead text-dark text-justify"> {!! trans('messages.tipoV17') !!}</p>
 
-                                             <h3 class="text-dark text-justify">Propósitos de viaje que no aplican:</h3>
-                                            <p class="lead text-dark text-justify"> Estudiar
-                                            <br>Empleo
-                                            <br>Actuaciones pagadas, o cualquier actuación profesional ante un público de pago
-                                            <br>Llegada como miembro de la tripulación en un barco o aeronave
-                                            <br>Trabajar como prensa extranjera, en radio, cine, periodismo 
-                                            impreso u otros medios de información
-                                             <br>Residencia permanente en los Estados Unidos</p>
+                                             <h3 class="text-dark text-justify"> {!! trans('messages.tipoV18') !!}</h3>
+                                            <p class="lead text-dark text-justify">{!! trans('messages.tipoV19') !!} </p>
 
                             </div>
                         </div>
@@ -192,33 +183,14 @@
                         <div class="card-body">
                             <div class="row">
                                 
-                                        <h2 class="text-dark text-justify" >(C) Tránsito en los EE. UU: </h2>
-                                        <p class="lead text-dark text-justify"> Las visas de tránsito (C) son visas de no inmigrante para personas que viajan en tránsito inmediato y
-                                             continuo a través de los Estados Unidos en ruta a otro país, con pocas excepciones.<br>
+                                        <h2 class="text-dark text-justify" >{!! trans('messages.tipoV4') !!} </h2>
+                                        <p class="lead text-dark text-justify"> {!! trans('messages.tipoV20') !!}
                                         </p>
-                                        <h3 class="text-dark text-justify" >Propósitos de viaje que aplican: </h3>
-                                        <p class="lead text-dark text-justify"> - Un ciudadano extranjero que viaja a otro país que tendrá una breve escala en los Estados Unidos 
-                                            cuando la única razón para ingresar a los Estados Unidos es para transitar.
-                                            <br>- Un pasajero que embarca desde un puerto extranjero en un crucero u otro buque que se dirige a otro país, que no sea los Estados Unidos, pero durante el curso del viaje, 
-                                            el buque hace puerto en los Estados Unidos sin intención de aterrizar en los Estados Unidos.
-                                            <br>- Un miembro de la tripulación que viaja a los Estados Unidos como pasajero para unirse a
-                                             un barco o avión en el que trabajará, proporcionando servicios para la operación. También necesitará 
-                                            una visa D de miembro de la tripulación, emitida con mayor frecuencia como una visa combinada C-1 / D. 
-                                            <br>- Un ciudadano extranjero que proceda en tránsito inmediato y continuo a través de los Estados Unidos hacia o desde el Distrito de la Sede de las Naciones Unidas, de conformidad con las disposiciones del acuerdo de la Sede con las Naciones Unidas, requiere una visa de tránsito diplomático (C-2).
-                                             Los viajes dentro de los Estados Unidos se limitarán a las inmediaciones de la ciudad de Nueva York.
+                                        <h3 class="text-dark text-justify" >{!! trans('messages.tipoV21') !!} </h3>
+                                        <p class="lead text-dark text-justify"> {!! trans('messages.tipoV22') !!}
                                         </p>
-                                        <h3 class="text-dark text-justify" >Propósitos de viaje que no aplican: </h3>
-                                        <p class="lead text-dark text-justify"> - Un ciudadano extranjero cuya escala en los Estados Unidos es para un propósito principal que no sea el tránsito, por ejemplo,
-                                             para visitar amigos o hacer turismo, requiere una visa de visitante (B).
-                                            <br>- Un oficial de costas que busca ingresar a los Estados Unidos generalmente requiere una visa de
-                                             visitante (B). Los oficiales costeros son empleados temporalmente cuando a un oficial de un barco 
-                                             extranjero se le concede permiso de regreso a casa mientras el buque se encuentra en puertos de los
-                                            Estados Unidos, siempre que el buque no permanezca en aguas de los Estados Unidos por más de 29 días. 
-                                            El oficial de costas puede entonces repetir el proceso con otro buque de la misma línea extranjera.
-                                            <br>- Un miembro de la tripulación en un yate privado que navega desde un puerto extranjero que
-                                             navegará en aguas de los Estados Unidos durante más de 29 días generalmente debe tener una visa de visitante (B).
-                                            <br>- Un funcionario o empleado de una organización internacional designada asignada a los Estados Unidos 
-                                            puede pasar en tránsito inmediato y continuo a través de los Estados Unidos con una visa de la Organización Internacional (G-4).
+                                        <h3 class="text-dark text-justify" >{!! trans('messages.tipoV18') !!}</h3>
+                                        <p class="lead text-dark text-justify">{!! trans('messages.tipoV23') !!}
                                         </p>
                                         
                             </div>
@@ -235,9 +207,8 @@
                         <div class="card-body">
                             <div class="row">
                                 
-                                        <h2 class="text-dark"> (F) Estudiante académico / (M) Estudiante no académico/técnico:  </h2>
-                                        <p class="lead text-dark text-justify">Debe tener una visa de estudiante para estudiar en los Estados Unidos. Su curso de estudio y el tipo de
-                                             escuela a la que planea asistir determinan si necesita una visa F o una visa M.<br>
+                                        <h2 class="text-dark"> {!! trans('messages.tipoV5') !!}  </h2>
+                                        <p class="lead text-dark text-justify">{!! trans('messages.tipoV24') !!}
                                         </p>
                                         <table class="table table-bordered ">
                                              <thead >
@@ -250,14 +221,9 @@
                                                 <tr>
                
                                                 <td class="text-justify">
-                                                Universidad o college<br>
-                                                Escuela secundaria<br>
-                                                Escuela primaria privada<br>
-                                                Seminario<br>
-                                                Conservatorio<br>
-                                                Otra institución académica, incluyendo un programa de formación lingüística<br>
+                                                {!! trans('messages.tipoV25') !!}
         
-                                                <td class="text-justify">Institución vocacional u otra institución no académica reconocida, que no sea un programa de capacitación lingüística<br>
+                                                <td class="text-justify">{!! trans('messages.tipoV26') !!}<br>
                                                  </tr>
                                              </tbody>
 
@@ -278,25 +244,25 @@
                         <div class="card-body">
                             <div class="row">
                                 
-                                        <h2 class="text-dark">(J) Visitante de intercambio:  </h2>
-                                        <p class="lead text-dark text-justify">Las visas de visitante de intercambio (J) son visas de no inmigrante para personas aprobadas para participar en programas de visitantes de intercambio en los Estados Unidos.<br>
+                                        <h2 class="text-dark">{!! trans('messages.tipoV6') !!}  </h2>
+                                        <p class="lead text-dark text-justify">{!! trans('messages.tipoV27') !!}
                                         </p>
-                                        <h2 class="text-dark">Las categorías de visitantes de intercambio incluyen:  </h2>
+                                        <h2 class="text-dark">{!! trans('messages.tipoV28') !!}  </h2>
                                         <p class="lead text-dark text-justify">
-                                        <a href="https://j1visa.state.gov/programs/au-pair/" >Au pair y EduCare</a><br>
-                                       <a href= "https://j1visa.state.gov/programs/camp-counselor/">Consejero de Campamento</a><BR>
-                                        <a href="https://j1visa.state.gov/programs/government-visitor/" >Visitante del Gobierno</a><br>
-                                        <a href="https://j1visa.state.gov/programs/intern/" >Interno</a><br>
-                                        <a href="https://j1visa.state.gov/programs/international-visitor/" >Visitante Internacional (Departamento de Uso del Estado)</a><br>
-                                        <a href="https://j1visa.state.gov/programs/physician/" >Médico</a><br>
-                                        <a href="https://j1visa.state.gov/programs/professor" >Profesor e Investigador Académico</a><br>
-                                        <a href="https://j1visa.state.gov/programs/short-term-scholar/" >Becario a corto plazo</a><br>
-                                        <a href="https://j1visa.state.gov/programs/specialist/" >Especialista</a><br>
-                                        <a href="https://j1visa.state.gov/programs/college-and-university-student/" >Estudiante, college/ universidad</a><br>
-                                        <a href="https://j1visa.state.gov/programs/secondary-school-student/" >Estudiante, secundaria</a><br>
-                                        <a href="https://j1visa.state.gov/programs/summer-work-travel/" >Viajes de trabajo de verano</a><br>
-                                        <a href="https://j1visa.state.gov/programs/teacher" >Maestro</a><br>
-                                        <a href="https://j1visa.state.gov/programs/trainee/" >Aprendiz</a><br>
+                                        <a href="https://j1visa.state.gov/programs/au-pair/" >https://j1visa.state.gov/programs/au-pair/</a> <br>
+                                       <a href= "https://j1visa.state.gov/programs/camp-counselor/">https://j1visa.state.gov/programs/camp-counselor/</a><BR>
+                                        <a href="https://j1visa.state.gov/programs/government-visitor/" >https://j1visa.state.gov/programs/government-visitor/</a><br>
+                                        <a href="https://j1visa.state.gov/programs/intern/" >https://j1visa.state.gov/programs/intern/</a><br>
+                                        <a href="https://j1visa.state.gov/programs/international-visitor/" >https://j1visa.state.gov/programs/international-visitor/</a><br>
+                                        <a href="https://j1visa.state.gov/programs/physician/" >https://j1visa.state.gov/programs/physician/</a><br>
+                                        <a href="https://j1visa.state.gov/programs/professor" >https://j1visa.state.gov/programs/professor</a><br>
+                                        <a href="https://j1visa.state.gov/programs/short-term-scholar/" >https://j1visa.state.gov/programs/short-term-scholar/</a><br>
+                                        <a href="https://j1visa.state.gov/programs/specialist/" >https://j1visa.state.gov/programs/specialist/</a><br>
+                                        <a href="https://j1visa.state.gov/programs/college-and-university-student/" >https://j1visa.state.gov/programs/college-and-university-student/</a><br>
+                                        <a href="https://j1visa.state.gov/programs/secondary-school-student/" >https://j1visa.state.gov/programs/secondary-school-student/</a><br>
+                                        <a href="https://j1visa.state.gov/programs/summer-work-travel/" >https://j1visa.state.gov/programs/summer-work-travel/</a><br>
+                                        <a href="https://j1visa.state.gov/programs/teacher" >https://j1visa.state.gov/programs/teacher</a><br>
+                                        <a href="https://j1visa.state.gov/programs/trainee/" >https://j1visa.state.gov/programs/trainee/</a><br>
                                         </p>
                                         
                                              

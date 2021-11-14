@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Usuario;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -15,7 +15,7 @@ class UsuarioController extends Controller
     public function index()
     {
         //
-        $datosUsuario['usuarios']=Usuario::paginate(100);
+        $datosUsuario['users']=User::paginate(100);
         return view('usuario.tabla',$datosUsuario);
 
     }
@@ -43,9 +43,9 @@ class UsuarioController extends Controller
         //
         //$datos=request()->all();
         $datos=request()->except('_token');
-        Usuario::insert($datos);
+        User::insert($datos);
         //return response()->json($datos);
-        return redirect('usuario')->with('mensaje','AGREGADO PERFECTO');
+        return redirect('users')->with('mensaje','AGREGADO PERFECTO');
     }
 
     /**
@@ -54,7 +54,7 @@ class UsuarioController extends Controller
      * @param  \App\Models\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function show(Usuario $usuario)
+    public function show(User $usuario)
     {
         //
     }
@@ -68,7 +68,7 @@ class UsuarioController extends Controller
     public function edit($id)
     {
         //
-        $usuario=Usuario::findOrFail($id);
+        $usuario=User::findOrFail($id);
         return view('usuario.edit', compact('usuario'));
     }
 
@@ -84,9 +84,9 @@ class UsuarioController extends Controller
         //
 
         $datosMio=request()->except(['_token','_method']);
-        Usuario::where('id','=',$id)->update($datosMio);
+        User::where('id','=',$id)->update($datosMio);
 
-        $usuario=Usuario::findOrFail($id);
+        $usuario=User::findOrFail($id);
         return view('usuario.edit', compact('usuario'));
 
     }
@@ -100,7 +100,7 @@ class UsuarioController extends Controller
     public function destroy($id)
     {
         //
-        Usuario::destroy($id);
+        User::destroy($id);
         return redirect('usuario')->with('mensaje','BORRADO PERFECTO');
     }
 }

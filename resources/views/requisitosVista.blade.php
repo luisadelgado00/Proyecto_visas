@@ -23,44 +23,39 @@
        
         <div id="sidebar" >
         <div class="sidebar-header">
-                <h3>Información a tener en cuenta</h3>
+                <h3>{!! trans('messages.requis3') !!}</h3>
             </div>
         <div class="menu">
             <ul class="list-group">
            
-            <a href="#inicio" style ="text-decoration: none">
-            <button type="button"  class="btn-flotante">
-            <i class="fas fa-angle-double-up"></i>
-                        
-                    </button> </a>
           
                 <li>
                 <a href="#generalidades" style ="text-decoration: none">
-                    Generalidades</a>
+                {!! trans('messages.requis2') !!}</a>
                 </li>
                 <li>
                 <a href="#docGeneral" style ="text-decoration: none">
-                Documentación general </a>
+                {!! trans('messages.requis3') !!} </a>
                 </li>
                 <li>
                 <a href="#docVisaT"  style ="text-decoration: none" >
-                Documentación visa de turista</a>
+                {!! trans('messages.requis4') !!}</a>
                 </li>
                 <li>
                 <a href="#docVisaE"  style ="text-decoration: none"> 
-               Documentación visa estudiantil</a>
+               {!! trans('messages.requis5') !!}</a>
                 </li>
                 <li>
-                <a href="#costos"  style ="text-decoration: none">
-            Costos de la visa</a>
+                <a href="#costos"  style ="text-decoration: none;">
+            {!! trans('messages.requis6') !!}</a>
                 </li>
                 <li>
                 <a href="#vContinental"  style ="text-decoration: none">
-            Proceso con visas continental</a>
+            {!! trans('messages.requis7') !!}</a>
                 </li>
                 <li>
                 <a href="#tiempo"  style ="text-decoration: none">
-            Tiempo de espera</a>
+                {!! trans('messages.requis8') !!}</a>
             </div>
                 </li>
             </ul>
@@ -90,13 +85,13 @@
                         </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route ('contacto')}}" class="nav-link">UBICACIÓN</a>
+                                <a href="{{route ('contacto')}}" class="nav-link">{!! trans('messages.head1') !!}</a>
                             </li>
                             <li class="nav-item">
-                            <a href="{{route ('tiposVisa')}}" class="nav-link">TIPOS DE VISA</a>
+                            <a href="{{route ('tiposVisa')}}" class="nav-link">{!! trans('messages.head2') !!}</a>
                             </li>
                             <li class="nav-item ">
-                            <a href="{{route ('requisitosVista')}}" class="nav-link">REQUISITOS NO INMIGRANTE</a>
+                            <a href="{{route ('requisitosVista')}}" class="nav-link">{!! trans('messages.requis') !!}</a>
                             </li>  
                         </ul>
                     </div>
@@ -104,6 +99,25 @@
             </nav>
 
              <!-- Generalidades -->
+             <a href="#inicio" style ="text-decoration: none">
+            <button type="button"  class="btn-flotante" style="font-size: 16px; /* Cambiar el tamaño de la tipografia */
+	text-transform: uppercase; /* Texto en mayusculas */
+	font-weight: bold; /* Fuente en negrita o bold */
+	color: #ffffff; /* Color del texto */
+	border-radius: 5px; /* Borde del boton */
+	letter-spacing: 2px; /* Espacio entre letras */
+	background-color: #2eb8d6; /* Color de fondo */
+    border-color: #2eb8d6;
+	padding: 18px 30px; /* Relleno del boton */
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	transition: all 300ms ease 0ms;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	z-index: 99;">
+            <i class="fas fa-angle-double-up" ></i>
+                        
+                    </button> </a>
   <a name="generalidades"></a>
               <section class="bg-mix py-3">
                 <div class="container">
@@ -111,12 +125,10 @@
                         <div class="card-body">
                             <div class="row">
                           
-                                        <h2 class="text-dark">Generalidades:</h2>
-                                        <p class="lead text-dark"> En general, un ciudadano de un país extranjero que pretenda entrar en los Estados Unidos debe obtener 
-                                            primero una visa estadounidense, que se coloca en el pasaporte del viajero; hay varios tipos de visa dependientdo si es de inmigrante o 
-                                            no inmigrante. <br>Ciertos viajeros internacionales pueden ingresar al país sin visa, pero deben cumplir los requisitos del Programa de Exención de Visa de los EE. UU, el cual permite que, con un pasaporte electrónico válido, los viajeros ingresen a los Estados Unidos sin una visa, hasta por 90 días por razones de negocios o placer. 
-                                            Puede leer los requisitos del Programa de Exención de Visa en <a href="https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html">https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html</a>. Cualquier persona que viaje a los Estados Unidos por motivos que no sean negocios o placer requiere una visa.
-                                            <br>En visas continental ofrecemos asesoramiento completo en el proceso para el trámite de visa de tipo turista y estudiantil. </p>
+                                        <h2 class="text-dark"> {!! trans('messages.requis2') !!}</h2>
+                                        <p class="lead text-dark"> {!! trans('messages.requis9') !!}
+                                            
+                                                 </p>
                             </div>
                         </div>
                     </div>
@@ -131,21 +143,8 @@
                         <div class="card-body">
                             <div class="row">
                                 
-                                        <h2 class="text-dark">Documentación general:</h2>
-                                        <p class="lead text-dark"> Estos documentos son obligatorios para todos los tipos de visa: <br>
-                                        1. Pasaporte válido para viajar a los Estados Unidos. 
-                                        La validez del pasaporte debe superar al menos en seis 
-                                        meses el período de estadía en los Estados Unidos. <br>
-                                        2. El pasaporte que contiene la visa emitida a los Estados 
-                                        Unidos más reciente (si aplica el caso).<br>
-                                        3. Solicitud de visa para no inmigrantes, página de confirmación del formulario DS-160.<br>
-                                        4. Página de Impresión de Confirmación e Instrucciones desde esta página Web.<br>
-                                        5. Una fotografía color de 5 x 5 cm (2 x 2 pulgadas) tomada dentro de los 6 meses anteriores. <br>
-                                        6. Los miembros acompañantes de la familia, a menos de que entren a los Estados Unidos por otro propósito, 
-                                        deberán presentar un certificado de matrimonio (esposa/o)
-                                         y/o certificado de nacimiento (para hijos solteros menores de 21 años) según sea aplicable.<br><br>
-                                         Si asiste en persona debe llevar todos los documentos originales.
-                                        
+                                        <h2 class="text-dark">{!! trans('messages.requis3') !!}</h2>
+                                        <p class="lead text-dark"> {!! trans('messages.requis10') !!}
                                         </p>
                             </div>
                         </div>
@@ -161,13 +160,8 @@
                         <div class="card-body">
                             <div class="row">
                                 
-                                        <h2 class="text-dark">Documentación específica visa 
-                                            (B) Visitante: Negocios, Turismo, Tratamiento médico: </h2>
-                                        <p class="lead text-dark"> No se exigen documentos adicionales a menos que se pretenda 
-                                            recibir tratamiento médico en los Estados Unidos. <br> 
-                                            Usted puede aplicar para una visa de visitante B-1 para trabajar temporalmente en los E. U. 
-                                            como empleado domestica en ciertas situaciones. Usted y su empleador se les solicitara que 
-                                            comprueben que la relación de empleo cumpla con las condiciones salariales y de trabajo vigentes en los E.U. </p>
+                                        <h2 class="text-dark"> {!! trans('messages.requis11') !!} </h2>
+                                        <p class="lead text-dark"> {!! trans('messages.requis12') !!}  </p>
                             </div>
                         </div>
                     </div>
@@ -181,18 +175,9 @@
                         <div class="card-body">
                             <div class="row">
                                 
-                                        <h2 class="text-dark">Documentación específica visa estudiantil: </h2>
+                                        <h2 class="text-dark">{!! trans('messages.requis13') !!} </h2>
                                         <p class="lead text-dark">
-                                            - Formulario I-20, Certificado de idoneidad para condición de estudiante no académico, de idiomas o técnico no inmigrante (F-1 o M-1). 
-                                            El solicitante deberá presentar un formulario I-20 generado mediante SEVIS, que le será proporcionado al 
-                                            solicitante por su institución educativa. El formulario I-20 debe llevar la firma del estudiante y del 
-                                            representante de la institución educativa. <br>
-                                            - El recibo de pago para el Sistema de Información de Visas de 
-                                            Estudiante e Intercambio (SEVIS por sus siglas en Ingles) I-901. Para información adicional acerca de quién requiere pagar esta tarifa. 
-                                            Por favor visite la sección de SEVP localizado en la siguiente página: <br>
-                                        
-
-
+                                        {!! trans('messages.requis14') !!}
                                         </p>
                             </div>
                         </div>
@@ -207,22 +192,13 @@
                         <div class="card-body">
                             <div class="row">
                                 
-                                        <h2 class="text-dark">Costos de la visa:</h2>
+                                        <h2 class="text-dark">{!! trans('messages.requis6') !!}</h2>
                                         
-                                        <h2 class="text-dark">Aranceles adicionales para solicitantes de visas: </h2>
-                                        <p class="lead text-dark"> Además del arancel de solicitud de visa (MRV) podrían exigirse otros aranceles para poder obtener una visa de no inmigrante. 
-                                            Los tipos de aranceles adicionales que podrían regir para su solicitud de visa son: <br><br>
-                                                - Arancel SEVIS : Los estudiantes (F o M) y visitantes de intercambio (J) 
-                                                deben pagar un arancel SEVIS (Sistema de Información de Estudiantes y Visitantes de Intercambio) por separado.
-                                                 Se exigirá la constancia de pago antes de emitirse una visa de estudiante o visitante de intercambio.
-                                                 Para más información ingrese aqui <a href ="http://www.ice.gov/sevis" >http://www.ice.gov/sevis</a><br><br>
-                                                - Arancel de reciprocidad: Dependiendo del país de ciudadania del solicitante y el tipo de visa, podria
-                                                tener que pagar un costo adicional. 
-                                                Para más información ingrese aqui <a href="https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country.html">
-                                                    https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country.html</a><br>
+                                        <h2 class="text-dark">{!! trans('messages.requis15') !!}</h2>
+                                        <p class="lead text-dark" >{!! trans('messages.requis16') !!}
                                                 </p>
                                     
-                                        <h2 class="text-dark">Detalle de aranceles de visas (MRV) estadounidenses: </h2>
+                                        <h2 class="text-dark">{!! trans('messages.requis17') !!}</h2>
                                         <table class="table table-bordered ">
                                              <thead >
                                              <tr >
@@ -234,27 +210,10 @@
                                              <tbody>
                                                 <tr>
                
-                                                <td class="text-justify">(B) Visitante: Negocios, Turismo, Tratamiento médico<br>
-                                                (C) Tránsito en los EE. UU.<br>
-                                                (D) Miembro de tripulación<br>
-                                                (F) Estudiante académico<br>
-                                                (M) Estudiante no académico/técnico<br>
-                                                (I) Medios o periodistas<br>
-                                                (J) Visitante de intercambio<br>
-                                                (TD/TN) Profesional del TLCAN<br>
-                                                (T) Víctima de trata de personas<br>
-                                                (U) Víctima de actividad delictiva</td> 
-                                                <td class="text-justify">(H) Trabajador/empleo temporal o pasantes<br>
-                                                (O) Personas con capacidades extraordinarias<br>
-                                                (P) Atletas, artistas y animadores<br>
-                                                (Q) Visitante de intercambio cultural internacional<br>
-                                                (R) Trabajador religioso<br>
-                                                (L) Empleado transferido dentro de su empresa</td> 
-                                                <td class="text-justify">(E1) Ciudadano de país con el cual EE. UU. ha firmado tratados<br>
-                                                    (E2) Ciudadano de país con el cual EE. UU. ha firmado tratados y 
-                                                    que hubiera realizado inversiones significativas en los EE. UU.<br>
-                                                    (E3) Australianos con especialidades profesionales</td>  
-                                                <td class="text-justify">(K) Prometido(a) o cónyuge de un(a) ciudadano/a estadounidense</td> 
+                                                <td class="text-justify">{!! trans('messages.requis18') !!}</td> 
+                                                <td class="text-justify">{!! trans('messages.requis19') !!}</td> 
+                                                <td class="text-justify">{!! trans('messages.requis20') !!}</td>  
+                                                <td class="text-justify">{!! trans('messages.requis21') !!}</td> 
                
                
               
@@ -277,14 +236,8 @@
                         <div class="card-body">
                             <div class="row">
                                 
-                                        <h2 class="text-dark">Proceso con visas continental: </h2>
-                                        <p class="lead text-dark"> Para comenzar el proceso con Visas Continental primero 
-                                            se debe realizar un pre diagnóstico con el fin de identificar que probabilidades 
-                                            hay de aprobación para dicho cliente. <br>
-                                            Una vez arrojados los resultados debe seguir estos pasos:<br>
-                                            1. Completar los datos solicitados por la página.<br>
-                                            2. Si cumple con cierto porcentaje, se le registrará en la página y un asesor de la empresa se contactara con usted vía correo electrónico o teléfono 
-                                            para explicarle el proceso y firmar el contrato para así comenzar con el trámite.
+                                        <h2 class="text-dark">{!! trans('messages.requis7') !!} </h2>
+                                        <p class="lead text-dark"> {!! trans('messages.requis22') !!}
                                         </p>
                             </div>
                         </div>
@@ -299,12 +252,8 @@
                         <div class="card-body">
                             <div class="row">
                                 
-                                        <h2 class="text-dark">Tiempo de espera: </h2>
-                                        <p class="lead text-dark"> Es importante planificar el viaje con anticipación y solicitar la visa con tiempo. La Embajada y los Consulados estadounidenses tratan de que los tiempos de espera para la emisión de las visas sean lo más cortos posible. Algunos tipos de visas son más populares que otros y 
-                                            podrían tener tiempos de espera más largos para la cita de solicitud y procesamiento.<br>
-                                            Debido a la pandemia de COVID-19, la Embajada de los Estados Unidos en Bogotá continua 
-                                            sin la posibilidad de reanudar las operaciones habituales de visa, las fechas para visas de no inmigrante 
-                                            pueden cancelarse si las situaciones del país no permiten brindar dicho servicio.
+                                        <h2 class="text-dark">{!! trans('messages.requis8') !!} </h2>
+                                        <p class="lead text-dark"> {!! trans('messages.requis23') !!}
                                         </p>
 
                             </div>

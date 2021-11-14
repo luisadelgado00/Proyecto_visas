@@ -156,11 +156,11 @@ class PrediagnosticoController extends Controller
           
           
          if (($puntos == 0) || ($puntos == 1) || ($puntos == 2)) {
-             $mensaje = "Tu probabilidad de obtener una visa es muy baja";
+             $mensaje = "Su probabilidad de obtener una visa es muy baja";
          }elseif (($puntos == 3) || ($puntos == 4)) {
-             $mensaje = "Tu probabilidad de obtener una visa es alta";
+             $mensaje = "Su probabilidad de obtener una visa es alta";
          }elseif (($puntos == 5)) {
-             $mensaje = "Tu probabilidad de obtener una visa es muy alta";
+             $mensaje = "Su probabilidad de obtener una visa es muy alta";
          }
          $porcentaje = ($puntos / 5)  * 100;
          /*echo '<script language="javascript">alert("Probabilidad de visa: '.$porcentaje.' % "+"'.$mensaje.'");</script>';*/

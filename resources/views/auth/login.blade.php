@@ -35,7 +35,7 @@ body {
         left: 50%;
         margin-left: -250px;
         width: 500px;
-        height: 500px;
+        height: 520px;
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.8);
         text-align: center;
@@ -155,7 +155,7 @@ body {
     </style>
 </head>
 <body>
-<h2 class="titulo"> {!! trans('messages.welcome') !!}</h2>
+<h2 class="titulo">{!! trans('messages.welcome') !!}</h2>
   <div class="wrap">
       
   <div class="pregu">
@@ -190,9 +190,7 @@ body {
             <div class="block mt-4">
                 <label for="remember_me" >
                     <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">
-                    {!! trans('messages.recDatos') !!}
-                    </span>
+                    <span class="ml-2 text-sm text-gray-600">{!! trans('messages.recDatos') !!}</span>
                 </label>
             </div>
 
@@ -214,7 +212,7 @@ body {
   
      <h3 class="mensaje2" >{!! trans('messages.mensajeInicio') !!}</h3><br>
      
-     <a  href= "{{route ('formulario')}}" class="boton">{!! trans('messages.prediagnostico') !!}</a></br></br>
+     
      <a href= "{{url ('welcome')}}" class="boton" >{!! trans('messages.inicio') !!}</a>
 </div> 
 </div> 

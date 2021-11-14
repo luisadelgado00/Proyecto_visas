@@ -12,46 +12,63 @@
 </head>
 <body>
     
-    <h2 class="titulo">Formulario Prediagnóstico para la aprobación para la visa estadounidense:</h2>
-    <div class="wrap">
+    
+    
+ <div  class ="resultado2" style="font-family: 'Open Sans Condensed', sans-serif;
+    position: relative;
+    margin-top: 15px;
+    font-size: 20px;
+    color: rgb(1, 7, 26);
+  /*text-shadow: 3px 3px 10px rgb(3, 89, 146);*/
+  text-align: justify;
+  margin-bottom: 20px;
+  margin-left: 50px;">
 
-    <form method="POST" action="{{url('prediagnostico')}}" class="fomrulario" >
-        @csrf
+<h2 class=" text-center" style="color:#001e6c;">{!! trans('messages.form1') !!}</h2>
+ <!-- pasos con visas continental -->
+ <a name="vContinental"></a>
+              <section class="bg-mix py-3">
+                <div class="container">
+                    <div class="card rounded-0">
+                        <div class="card-body">
+                            <div class="row">
+                            
+    
+                                <form method="POST" action="{{url('prediagnostico')}}" class="fomrulario" >
+                                    @csrf
 
-    <div class="pregu">
-    <h4>Los resultados de su prediagnóstico son: </h4>
-    <div class="resultado">
-<?php
- echo "$porcentaje % de probabilidad. <br> $mensaje <br>"
- 
- ?>
- </div>
-   <!--  
- <div class="resultado2">
-
-        <label  class="label" for="nombreU">Nombre: </label><br>
-        <input type="text" class="nombre" name="nombreU"><br>
-        <label  class="label"  for="apellidoU">Apellido: </label><br>
-        <input type="text" class="apellido" name="apellidoU"><br>
-        <label  class="label" for="telefonoU">Telefono: </label><br>
-        <input type="text" class="telefono" name="telefonoU"><br>
-        <label  class="label" class="label" for="correoU">Correo: </label><br>
-        <input type="email" class="correo" name="correoU"><br>
-        <label  class="label"  for="visa">Tipo de visa: </label><br>
-        <select class="visas" name="visa">
-    <option>Visa estudiantil</option>
-    <option>Visa de turismo</option>
-  </select></br>
-        <label  class="label" for="probabilidad">probabilidad: </label><br>
-        <input type="text" name="probabilidad" class="prob" value="<?php echo $porcentaje." % de probabilidad."?>" readonly> <br>
-        <br><input type="submit"  class ="boton" value="GUARDAR DATOS ">
-           <a href= "{{url ('prediagnostico/pdf')}}" class="boton" >PDF</a> 
+                                
+                                
+                             <div class=" text-center" style="color:#001e6c;">  
+                             <h3 >{!! trans('messages.form2') !!} <?php
+                            echo "$porcentaje %  <br>"         
+                            ?></h3>
+                            
+                            </div>
+                            <div class=" text-center" style="color:#001e6c;"> 
+                            <label  class="text-dark text-center" for="nombreU">{!! trans('messages.nombre') !!} </label><br>
+        <input type="text"  name="nombreU"><br>
+        <label  class="text-dark text-left" for="apellidoU">{!! trans('messages.apellido') !!} </label><br>
+        <input type="text"  name="apellidoU"><br>
+        <label  class="text-dark text-center" class="level" for="correoU">{!! trans('messages.email') !!} </label><br>
+        <input type="email"  name="correoU"><br>
+        <label  class="text-dark text-center" for="probabilidad">{!! trans('messages.probabilidad') !!} </label><br>
+        <input type="text"  name="probabilidad" value="<?php echo $porcentaje." % "?>" readonly> <br>
+        <br><input type="submit"  class ="boton2" value="{!! trans('messages.upP6') !!}">
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </section>
         
-       </div>-->
-       <a href= "{{url ('login')}}" class="boton" >INICIO</a>
- </div>
-</div>
-</div>
+        <!--<a href= "{{url ('prediagnostico/pdf')}}" class="boton" >PDF</a>-->
+        
+       
+    
+ 
+
+
 </body>
 </html>
 

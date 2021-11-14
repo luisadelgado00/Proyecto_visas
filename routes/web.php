@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Views;
 use App\Http\Controllers\PrediagnosticoController;
 Use App\Http\Controllers\UsuarioController;
 Use App\Http\Controllers\VisasController;
+use App\Http\Controllers\Seguridad;
 Use App\Http\Controllers\LanguageController;
 
 /*
@@ -60,9 +61,19 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-/*
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('permisos',[Seguridad\PermisosController::class,'index'])->name('permisos.index');
 
+    Route::get('roles',[Seguridad\RolesController::class,'index'])->name('roles.index');
+});
+
+/*
 Route::get('/prediagnostico/create',[PrediagnosticoController::class,'create']);*/
+
+//Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+  //  Route::get('/dashboard');
+    //Route::get('permisos',[Seguridad\PermisosController::class,'index'])->name('permisos.index');
+//});
 
 Route::view('/registroCliente','registroCliente' )->name('registroCliente');
 
@@ -71,7 +82,5 @@ Route::resource('prediagnostico','App\Http\Controllers\PrediagnosticoController'
 //Auth::routes();
 
 Route::resource('usuario', 'App\Http\Controllers\UsuarioController'::class);
-
-
 
 Route::get('lang/{lang}',[LanguageController::class,'swap'])->name('lang.swap');

@@ -1,26 +1,24 @@
 <x-jet-action-section>
     <x-slot name="title">
-        {{ __('Autenticación en dos factores') }}
+    {!! trans('messages.autenticacion1') !!}
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Agregue seguridad adiconal a su cuenta usando la autenticación en dos factores.') }}
+    {!! trans('messages.autenticacion2') !!}
     </x-slot>
 
     <x-slot name="content">
         <h3 class="text-lg font-medium text-gray-900">
             @if ($this->enabled)
-                {{ __('Ha activado la autenticación en dos factores.') }}
+            {!! trans('messages.autenticacion3') !!}
             @else
-                {{ __('No ha activado la autenticación en dos factores.') }}
+            {!! trans('messages.autenticacion4') !!}
             @endif
         </h3>
 
         <div class="mt-3 max-w-xl text-sm text-gray-600">
             <p>
-                {{ __('Cuando la autenticación en dos factores este activada, 
-                    Se le pedirá un token aleatorio seguro durante la autenticación. 
-                    Puede obtener este token de la aplicación Google Authenticator en su telefono.') }}
+            {!! trans('messages.autenticacion5') !!}
             </p>
         </div>
 
@@ -28,8 +26,7 @@
             @if ($showingQrCode)
                 <div class="mt-4 max-w-xl text-sm text-gray-600">
                     <p class="font-semibold">
-                        {{ __('La autenticación en dos factores está activada. 
-                            Escanee el siguiente codigo QR usando Google Authenticator.') }}
+                    {!! trans('messages.autenticacion6') !!}
                     </p>
                 </div>
 
@@ -41,8 +38,7 @@
             @if ($showingRecoveryCodes)
                 <div class="mt-4 max-w-xl text-sm text-gray-600">
                     <p class="font-semibold">
-                        {{ __('Guarde los sigueintes codigos de recuperación en un administrador de contraseñas seguro.
-                            Pueden ser usados para recuperar el acceso a su cuenta si ha perdido su dispositivo de autenticación') }}
+                    {!! trans('messages.autenticacion7') !!}
                     </p>
                 </div>
 
@@ -58,27 +54,27 @@
             @if (! $this->enabled)
                 <x-jet-confirms-password wire:then="enableTwoFactorAuthentication">
                     <x-jet-button type="button" wire:loading.attr="disabled">
-                        {{ __('Activar') }}
+                    {!! trans('messages.autenticacion8') !!}
                     </x-jet-button>
                 </x-jet-confirms-password>
             @else
                 @if ($showingRecoveryCodes)
                     <x-jet-confirms-password wire:then="regenerateRecoveryCodes">
                         <x-jet-secondary-button class="mr-3">
-                            {{ __('Regenerar codigos de recuperación') }}
+                        {!! trans('messages.autenticacion9') !!}
                         </x-jet-secondary-button>
                     </x-jet-confirms-password>
                 @else
                     <x-jet-confirms-password wire:then="showRecoveryCodes">
                         <x-jet-secondary-button class="mr-3">
-                            {{ __('Mostrar codigos de recuperación') }}
+                        {!! trans('messages.autenticacion10') !!}
                         </x-jet-secondary-button>
                     </x-jet-confirms-password>
                 @endif
 
                 <x-jet-confirms-password wire:then="disableTwoFactorAuthentication">
                     <x-jet-danger-button wire:loading.attr="disabled">
-                        {{ __('Desactivar') }}
+                    {!! trans('messages.autenticacion11') !!}
                     </x-jet-danger-button>
                 </x-jet-confirms-password>
             @endif

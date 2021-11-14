@@ -1,27 +1,27 @@
 <x-jet-form-section submit="updatePassword">
     <x-slot name="title">
-        {{ __('Actualizar contraseña') }}
+    {!! trans('messages.upP1') !!}
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Asegúrese de que su cuenta esté usando una contraseña larga y aleatoria, para mantenerse seguro.') }}
+    {!! trans('messages.upP2') !!}
     </x-slot>
 
     <x-slot name="form">
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="current_password" value="{{ __('Contraseña actual') }}" />
+            <x-jet-label for="current_password" value="{!! trans('messages.upP3') !!}" />
             <x-jet-input id="current_password" type="password" class="mt-1 block w-full" wire:model.defer="state.current_password" autocomplete="current-password" />
             <x-jet-input-error for="current_password" class="mt-2" />
         </div>
 
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="password" value="{{ __('Nueva contraseña') }}" />
+            <x-jet-label for="password" value="{!! trans('messages.upP4') !!}" />
             <x-jet-input id="password" type="password" class="mt-1 block w-full" wire:model.defer="state.password" autocomplete="new-password" />
             <x-jet-input-error for="password" class="mt-2" />
         </div>
 
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="password_confirmation" value="{{ __('Confirmar contraseña') }}" />
+            <x-jet-label for="password_confirmation" value="{!! trans('messages.confirmPass') !!}" />
             <x-jet-input id="password_confirmation" type="password" class="mt-1 block w-full" wire:model.defer="state.password_confirmation" autocomplete="new-password" />
             <x-jet-input-error for="password_confirmation" class="mt-2" />
         </div>
@@ -29,11 +29,11 @@
 
     <x-slot name="actions">
         <x-jet-action-message class="mr-3" on="saved">
-            {{ __('Guardado.') }}
+        {!! trans('messages.upP5') !!}
         </x-jet-action-message>
 
         <x-jet-button>
-            {{ __('Guardar') }}
+        {!! trans('messages.upP6') !!}
         </x-jet-button>
     </x-slot>
 </x-jet-form-section>

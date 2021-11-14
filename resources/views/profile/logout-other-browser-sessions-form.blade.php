@@ -1,19 +1,15 @@
 <x-jet-action-section>
     <x-slot name="title">
-        {{ __('Sesiones abiertas') }}
+    {!! trans('messages.salir1') !!}
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Administre y cierre sus sesiones activas en otros dispositivos.') }}
+    {!! trans('messages.salir2') !!}
     </x-slot>
 
     <x-slot name="content">
         <div class="max-w-xl text-sm text-gray-600">
-            {{ __('Si es necesario, puede cerrar las sesiones activas de todos los dispositivos. 
-                Puede ver algunas de sus sesiones activas a continuación, de cualquier forma, esta lista
-                no es exhaustiva. Si siente que su sesión se ha visto comprometida, debería actualizar 
-                su contraseña.
-                ') }}
+        {!! trans('messages.salir3') !!}
         </div>
 
         @if (count($this->sessions) > 0)
@@ -45,7 +41,7 @@
                                     @if ($session->is_current_device)
                                         <span class="text-green-500 font-semibold">{{ __('Este dispositivo') }}</span>
                                     @else
-                                        {{ __('Ultima vez') }} {{ $session->last_active }}
+                                    {!! trans('messages.salir4') !!} {{ $session->last_active }}
                                     @endif
                                 </div>
                             </div>
@@ -57,23 +53,22 @@
 
         <div class="flex items-center mt-5">
             <x-jet-button wire:click="confirmLogout" wire:loading.attr="disabled">
-                {{ __('Cerrar sesión en otros dispositivos') }}
+            {!! trans('messages.salir5') !!}
             </x-jet-button>
 
             <x-jet-action-message class="ml-3" on="loggedOut">
-                {{ __('Hecho.') }}
+            {!! trans('messages.salir6') !!}
             </x-jet-action-message>
         </div>
 
         <!-- Log Out Other Devices Confirmation Modal -->
         <x-jet-dialog-modal wire:model="confirmingLogout">
             <x-slot name="title">
-                {{ __('Cerrar sesión en otros dispositivos') }}
+            {!! trans('messages.salir7') !!}
             </x-slot>
 
             <x-slot name="content">
-                {{ __('Por favor ingrese su contraseña para confirmar si quiere cerrar 
-                    la sesión en todos los dispositivos.') }}
+            {!! trans('messages.salir8') !!}
 
                 <div class="mt-4" x-data="{}" x-on:confirming-logout-other-browser-sessions.window="setTimeout(() => $refs.password.focus(), 250)">
                     <x-jet-input type="password" class="mt-1 block w-3/4"
@@ -88,13 +83,13 @@
 
             <x-slot name="footer">
                 <x-jet-secondary-button wire:click="$toggle('confirmingLogout')" wire:loading.attr="disabled">
-                    {{ __('Cancelar') }}
+                {!! trans('messages.borrar5') !!}
                 </x-jet-secondary-button>
 
                 <x-jet-button class="ml-2"
                             wire:click="logoutOtherBrowserSessions"
                             wire:loading.attr="disabled">
-                    {{ __('Cerrar sesión en otros dispositivos') }}
+                            {!! trans('messages.salir5') !!}
                 </x-jet-button>
             </x-slot>
         </x-jet-dialog-modal>

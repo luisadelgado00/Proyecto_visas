@@ -33,13 +33,13 @@
     <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
         <ul class="navbar-nav ml-auto flex-nowrap">
             <li class="nav-item">
-                <a href="{{route ('contacto')}}" class="nav-link">UBUCACIÓN</a>
+                <a href="{{route ('contacto')}}" class="nav-link">{!! trans('messages.head1') !!}</a>
             </li>
             <li class="nav-item">
-                <a href="{{route ('tiposVisa')}}" class="nav-link">TIPOS DE VISA</a>
+                <a href="{{route ('tiposVisa')}}" class="nav-link">{!! trans('messages.head2') !!}</a>
             </li>
             <li class="nav-item">
-                <a href="{{route ('requisitosVista')}}" class="nav-link">REQUISITOS TRAMITE NO INMIGRANTE</a>
+                <a href="{{route ('requisitosVista')}}" class="nav-link">{!! trans('messages.requis') !!}</a>
             </li>
         </ul>
     </div>

@@ -2,7 +2,7 @@
 
 body {
 
-overflow: hidden;
+
 width: 100% !important;
 box-sizing: border-box;
 font-family: 'Roboto', sans-serif;
@@ -36,15 +36,15 @@ td {
     }
     .pregu{
 
-position:absolute;
-top: 55%;
-margin-top: -250px;
-left: 50%;
-margin-left: -250px;
-width: 500px;
-height: 500px;
-border-radius: 10px;
-background: rgba(255, 255, 255, 0.8);
+        position:absolute;
+        top: 55%;
+        margin-top: -250px;
+        left: 50%;
+        margin-left: -250px;
+        width: 500px;
+        height: 500px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.8);
 
 }
 
@@ -54,30 +54,27 @@ background: rgba(255, 255, 255, 0.8);
     
 
 <x-app-layout>
-   
-            <div class="pregu">
-
-            <form class="" action="admin.php" method="post">
-            <table>
-                <tr>
-            <!--CLICK EN IMAGENES QUE SON BOTONES CON ESCRITURA NORMAL-->   
-            <td><br><label class="label">REGISTRO DEL CLIENTE</label><br>
-            <br><a href= "{{url ('/prediagnostico')}}" class="boton" ><img  src="{!! asset('images/usuario.png') !!}" width="200px" height="150px"/></a><br></td>
-            </tr>
-            <tr>
-            <td ><br><label class="label">VISUALIZACION REGISTRO DEL CLIENTE</label><br>
-            <a href= "{{url ('/usuario')}}" class="boton" ><img src="{!! asset('images/gafas.png') !!}" width="200px" height="120px"></a></br>
-           
-                  
-                       
-            
-            
-            </tr>
-
-            </tr>
-            </table>
-            </div> 
+    
+           @can('admin.home')
+           <br><br>
+            <h1 style="display: flex;justify-content: center; font-weight: bold">{!! trans('messages.funDash1') !!}</h1>
+            <div class="py-10" style="display: flex; justify-content: center">
+                <div style="margin: auto" class="col text-center>"
+                    <br><a href= "{{url ('/prediagnostico')}}" class="boton" ><img  src="{!! asset('images/chequeo.png') !!}" width="200px" height="150px"/>{!! trans('messages.funDash2') !!}</a><br>
+                </div>
+                <div style="margin: auto" class="col text-center">
+                    <a href= "{{url ('/usuario')}}" class="boton" ><img src="{!! asset('images/man.png') !!}" width="200px" height="150px">{!! trans('messages.funDash3') !!}</a></br>
+                </div>
             </div>
+            @endcan
+            @can('user.home')
+            <br><br>
+            <h1 style="display: flex;justify-content: center; font-weight: bold">{!! trans('messages.funDash4') !!}</h1>
+            <div class="py-10" style="display: flex; justify-content: center">
+            <a  href= "{{route ('formulario')}}" class="boton"><img src="{!! asset('images/diagnostico.png') !!}" width="200px" height="120px">{!! trans('messages.prediagnostico') !!}</a></br></br>
+            </div> 
+            @endcan
+            
     
 </x-app-layout>
 </body>

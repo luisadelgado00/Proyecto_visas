@@ -27,7 +27,7 @@
                     <div class="card rounded-0">
                         <div class="card-body">
                             <div class="row">
-                            <h2 class="text-dark text-center">CONTÁCTENOS: </h2>
+                            <h2 class="text-dark text-center">{!! trans('messages.contacto1') !!} </h2>
                             <p class="lead text-dark text-center">   
 
                         <a href ="https://www.facebook.com/visascontinentalcol/" 
@@ -46,7 +46,7 @@
                         </button>
                         </a> </p>
 
-                        <h2 class="text-dark text-center">UBICACIÓN: </h2>
+                        <h2 class="text-dark text-center">{!! trans('messages.contacto2') !!} </h2>
                         <p class="lead text-dark text-center">
                         Ac. 26 #32 N 92<br>
                         Bogotá, Colombia
